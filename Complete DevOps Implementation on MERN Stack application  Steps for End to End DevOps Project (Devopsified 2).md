@@ -1,9 +1,7 @@
 
 # Complete DevOps Implementation on MERN Stack application | Steps for End to End DevOps Project (Devopsified 2)
 
-
-
-
+![Three-Tier](https://github.com/user-attachments/assets/f6c0118b-d307-47a0-867c-6a46302c4afb)
 
 
 ## Steps:
@@ -178,6 +176,9 @@ Note: You should have the terraform files written in the github directory mentio
 7. Click on ```Build with Parameters``` on Jenkins pipeline interface, select the environment (```dev``` is set in our case in Jenkins file/script) and set the ```terraform_action``` to ```apply``` and click on the ```Build``` button.
 
 Now, our VPC, EKS cluster and every infrastructure will start creating. It will take some time. The infrastructure would look as below:
+
+![Screenshot 2025-06-12 174855](https://github.com/user-attachments/assets/c901f8f8-3f57-4816-b974-bbac9673e5df)
+
 
 
 8. Meanwhile, we can create a ```JUMP Server``` in the VPC that we just created. Our EKS cluster is inside a private VPC, and we cannot access it directly from outside due to security reasons. So, we will provide the access to JUMP server, which is also inside the private VPC and the JUMP server can communicate with the EKS cluster as they are in the same VPC. So, we will communicate with EKS cluster via JUMP server.
