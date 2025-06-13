@@ -1,7 +1,8 @@
 
 # Complete DevOps Implementation on MERN Stack application | Steps for End to End DevOps Project (Devopsified 2)
 
-![Three-Tier](https://github.com/user-attachments/assets/f6c0118b-d307-47a0-867c-6a46302c4afb)
+
+![3-tier-gif](https://github.com/user-attachments/assets/c7d53db0-c9ab-48a2-acd4-f0403790845f)
 
 
 ## Steps:
