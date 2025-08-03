@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "This is my first cloud formation template to launch an EC2 instance."
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-04b4f1a9cf54c11d0"
+      InstanceType: "t2.micro"
+      KeyName: "first-ec2-instance"

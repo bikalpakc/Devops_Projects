@@ -1,0 +1,22 @@
+# ------------ Build Stage ------------
+FROM python:3.11-slim AS builder
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --target=/app/deps -r requirements.txt
+
+# Copy Django app
+COPY . .
+
+# ------------ Final Stage (Distroless) ------------
+FROM gcr.io/distroless/python3-debian11
+
+WORKDIR /app
+
+# Copy installed dependencies and app code from builder
+COPY --from=builder /app /app
+
+# Run the Django app
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]

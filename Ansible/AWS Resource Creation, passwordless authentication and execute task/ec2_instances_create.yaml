@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+  - name: start an instance with a public IP address
+    amazon.aws.ec2_instance:
+      name: "{{item.name}}"
+      key_name: "ansible-practice"
+      instance_type: t2.micro
+      security_group: launch-wizard-2
+      region: us-east-1
+      network_interfaces:
+        - assign_public_ip: true
+      image_id: "{{item.image_id}}"
+      access_key: "{{aws_access_key}}"
+      secret_key: "{{aws_secret_key}}"
+      tags:
+        Environment: "{{item.name}}"
+        
+
+    loop:
+    - { name: "manage node 1", image_id: "ami-04b4f1a9cf54c11d0" }
+    - { name: "manage node 2", image_id: "ami-04b4f1a9cf54c11d0" }
+    - { name: "manage node 3", image_id: "ami-04b4f1a9cf54c11d0" }
+
+  
